@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
 from db.database import engine
-from routes import auth
+from routes import auth, profile
 
 load_dotenv()
 
 app = FastAPI()
 
 app.include_router(auth.router, prefix="/auth", tags=["auth"])
+app.include_router(profile.router, prefix="", tags=["profile"])
 
 @app.get("/health")
 def health_check():
