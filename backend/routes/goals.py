@@ -9,8 +9,8 @@ import os
 router = APIRouter()
 
 # Load model and encoder when backend starts
-model = joblib.load(os.path.join(os.path.dirname(__file__), "../../ml/goal_recommender.pkl"))
-le = joblib.load(os.path.join(os.path.dirname(__file__), "../../ml/label_encoder.pkl"))
+model = joblib.load(os.path.join(os.path.dirname(__file__), "../ml/goal_recommender.pkl"))
+le = joblib.load(os.path.join(os.path.dirname(__file__), "../ml/label_encoder.pkl"))
 
 activity_map = {
     "sedentary": 0,
